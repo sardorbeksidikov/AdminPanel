@@ -1,0 +1,231 @@
+@mixin input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background-color: rgb(245, 245, 250);
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 20px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.add_product {
+  width: 100%;
+  height: auto;
+  display: flex;
+  height: 100%;
+  padding-top: 115px;
+  padding-bottom: 150px;
+
+  .add_product_item {
+    width: 100%;
+    padding-bottom: 150px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    .osno {
+      width: 180px;
+      height: 45px;
+      background-color: rgb(245, 245, 250);
+      border: none;
+      outline: none;
+      margin: 20px 0 0 45px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .add_form {
+      width: 100%;
+      height: 100%;
+      //   display: flex;
+      .add_form_item_w {
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid rgba(0, 0, 0, 0.235);
+        margin: 0 auto;
+        padding-top: 20px;
+        margin-top: 10px;
+        border-radius: 8px;
+        padding-bottom: 100px;
+      }
+
+      .label {
+        margin-left: 45px;
+        margin-top: 20px;
+      }
+
+      .add_form_item:nth-child(1) {
+        width: 72.4%;
+        input {
+          @include input;
+        }
+      }
+      .add_form_item:nth-child(2) {
+        width: 35%;
+        input {
+          @include input;
+        }
+      }
+      .add_form_item:nth-child(3) {
+        width: 35%;
+
+        .label {
+          margin-left: 70px;
+        }
+        input {
+          @include input;
+          margin-left: 60px;
+        }
+      }
+      .add_form_item1 {
+        width: 72.4%;
+        margin-top: 20px;
+        textarea {
+          @include input;
+          padding-top: 20px;
+          resize: none;
+          height: 150px;
+        }
+      }
+      .add_form_item2 {
+        margin-top: 20px;
+
+        width: 30%;
+        input {
+          @include input;
+        }
+      }
+      .input_pr {
+        display: flex;
+      }
+      .add_form_item3 {
+        margin-top: 20px;
+        width: 30%;
+        margin-left: 20px;
+        .label {
+          margin-left: 70px;
+        }
+        input {
+          @include input;
+          margin-left: 60px;
+        }
+      }
+    }
+  }
+}
+.save {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  button {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:nth-child(1) {
+    background-color: rgb(27, 196, 140);
+    color: white;
+  }
+  button:nth-child(2) {
+    background-color: rgb(247, 247, 255);
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .add_product {
+    .add_product_item {
+      .add_form {
+        .add_form_item:nth-child(1) {
+          width: 90%;
+          margin: 0 auto;
+          input {
+            margin-left: 0;
+          }
+        }
+        .add_form_item:nth-child(2) {
+          width: 90%;
+          margin: 0 auto;
+          input {
+            margin-left: 0;
+          }
+        }
+        .add_form_item:nth-child(3) {
+          width: 90%;
+          margin: 0 auto;
+          input {
+            margin-left: 0;
+          }
+
+          .label {
+            margin-left: 25px;
+          }
+        }
+        .add_form_item1 {
+          width: 90%;
+          margin-left: 0;
+          margin: 0 auto;
+          margin-top: 50px;
+          textarea {
+            margin-left: 0px !important;
+          }
+        }
+        .input_pr {
+          flex-wrap: wrap;
+          .add_form_item2 {
+            width: 90%;
+            margin-left: 0;
+            margin: 0 auto;
+            input {
+              margin-left: 0px !important;
+            }
+          }
+          .add_form_item3 {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0;
+            .label {
+              margin-left: 45px;
+            }
+            input {
+              margin-left: 0px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .add_product {
+    padding-bottom: 250px;
+  }
+  .save {
+    height: 150px;
+    display: grid;
+    align-items: center;
+    button:nth-child(1) {
+      margin-top: 20px;
+    }
+    button:nth-child(2) {
+      margin-top: 0px;
+      margin-bottom: 30px;
+    }
+  }
+}
